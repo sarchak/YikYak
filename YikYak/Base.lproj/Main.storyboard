@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oNd-gw-Ouf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="azq-AV-62C">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -19,7 +19,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u53-sv-HTT" id="sCI-lx-yGP">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRT-iZ-bG1">
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRT-iZ-bG1">
                                             <rect key="frame" x="560" y="5" width="30" height="30"/>
                                             <state key="normal" image="up">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -37,7 +37,7 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N21-wd-3US">
+                                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N21-wd-3US">
                                             <rect key="frame" x="560" y="64" width="30" height="30"/>
                                             <state key="normal" image="down">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -50,8 +50,8 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="This is a beautiful Yik Yak Clone built in Swift" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLh-UX-Hh3">
-                                            <rect key="frame" x="14" y="9" width="510" height="20.5"/>
-                                            <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="16"/>
+                                            <rect key="frame" x="14" y="11" width="510" height="40.5"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="18"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -62,26 +62,27 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="4 replies" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Phi-R8-TH1">
-                                            <rect key="frame" x="76" y="67" width="96" height="21"/>
+                                            <rect key="frame" x="114" y="67" width="96" height="21"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="bLh-UX-Hh3" firstAttribute="leading" secondItem="sCI-lx-yGP" secondAttribute="leadingMargin" constant="6" id="3sd-hx-8lH"/>
                                         <constraint firstAttribute="trailing" secondItem="NRT-iZ-bG1" secondAttribute="trailing" constant="10" id="5i9-qT-BCJ"/>
                                         <constraint firstAttribute="trailing" secondItem="N21-wd-3US" secondAttribute="trailing" constant="10" id="CUq-eh-BJm"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="bLh-UX-Hh3" secondAttribute="trailing" constant="68" id="Hry-MD-pKZ"/>
-                                        <constraint firstItem="Phi-R8-TH1" firstAttribute="leading" secondItem="bwL-X8-RCe" secondAttribute="trailing" constant="8" id="Hxb-iy-OQC"/>
+                                        <constraint firstItem="Phi-R8-TH1" firstAttribute="leading" secondItem="bwL-X8-RCe" secondAttribute="trailing" constant="46" id="Hxb-iy-OQC"/>
                                         <constraint firstItem="N21-wd-3US" firstAttribute="top" secondItem="NRT-iZ-bG1" secondAttribute="bottom" constant="29" id="Hyk-jG-z94"/>
-                                        <constraint firstItem="bLh-UX-Hh3" firstAttribute="top" secondItem="sCI-lx-yGP" secondAttribute="topMargin" constant="1" id="N2T-yg-yu1"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="bLh-UX-Hh3" secondAttribute="bottom" constant="36.5" id="JpO-eh-U9Z"/>
                                         <constraint firstItem="N21-wd-3US" firstAttribute="top" secondItem="NRT-iZ-bG1" secondAttribute="bottom" constant="29" id="OvW-Bw-uqW"/>
+                                        <constraint firstItem="NRT-iZ-bG1" firstAttribute="leading" secondItem="bLh-UX-Hh3" secondAttribute="trailing" constant="36" id="S5i-AP-u6R"/>
                                         <constraint firstItem="Phi-R8-TH1" firstAttribute="bottom" secondItem="sCI-lx-yGP" secondAttribute="bottomMargin" id="TxF-Ss-dkn"/>
                                         <constraint firstItem="bwL-X8-RCe" firstAttribute="leading" secondItem="sCI-lx-yGP" secondAttribute="leadingMargin" constant="6" id="VVk-cx-4aO"/>
                                         <constraint firstAttribute="centerY" secondItem="lei-mu-QyI" secondAttribute="centerY" id="XfZ-t2-A6F"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="bwL-X8-RCe" secondAttribute="bottom" constant="1" id="bII-b6-OWY"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="lei-mu-QyI" secondAttribute="trailing" constant="7" id="lhv-V1-ZJF"/>
+                                        <constraint firstItem="bLh-UX-Hh3" firstAttribute="top" secondItem="sCI-lx-yGP" secondAttribute="topMargin" constant="3" id="q4r-rX-L1z"/>
+                                        <constraint firstItem="bLh-UX-Hh3" firstAttribute="leading" secondItem="sCI-lx-yGP" secondAttribute="leadingMargin" constant="6" id="rJD-aC-brq"/>
                                         <constraint firstAttribute="bottom" secondItem="N21-wd-3US" secondAttribute="bottom" constant="1" id="wfb-by-8Ss"/>
                                         <constraint firstItem="NRT-iZ-bG1" firstAttribute="top" secondItem="sCI-lx-yGP" secondAttribute="top" constant="5" id="yrW-Yn-rUV"/>
                                     </constraints>
@@ -238,6 +239,7 @@
             <objects>
                 <tableViewController id="Azj-Ec-1i1" customClass="TableViewController" customModule="YikYak" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="wvG-dt-0Gl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -305,15 +307,15 @@
                                             <exclude reference="7sG-bL-alo"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <exclude reference="idJ-0W-OTO"/>
-                                            <exclude reference="lhd-oP-J14"/>
+                                            <exclude reference="iYf-pk-h1T"/>
                                             <exclude reference="QrV-CG-3ef"/>
                                             <exclude reference="uA6-V5-yLi"/>
+                                            <exclude reference="idJ-0W-OTO"/>
+                                            <exclude reference="lhd-oP-J14"/>
                                             <exclude reference="16L-A4-gfn"/>
                                             <exclude reference="CPG-4h-dnh"/>
                                             <exclude reference="Ked-36-bPr"/>
                                             <exclude reference="yO2-Xo-fCn"/>
-                                            <exclude reference="iYf-pk-h1T"/>
                                             <exclude reference="GTe-EN-YQu"/>
                                         </mask>
                                     </variation>
@@ -327,15 +329,15 @@
                                             <include reference="7sG-bL-alo"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <include reference="idJ-0W-OTO"/>
-                                            <include reference="lhd-oP-J14"/>
+                                            <include reference="iYf-pk-h1T"/>
                                             <include reference="QrV-CG-3ef"/>
                                             <include reference="uA6-V5-yLi"/>
+                                            <include reference="idJ-0W-OTO"/>
+                                            <include reference="lhd-oP-J14"/>
                                             <include reference="16L-A4-gfn"/>
                                             <include reference="CPG-4h-dnh"/>
                                             <include reference="Ked-36-bPr"/>
                                             <include reference="yO2-Xo-fCn"/>
-                                            <include reference="iYf-pk-h1T"/>
                                             <include reference="GTe-EN-YQu"/>
                                         </mask>
                                     </variation>
@@ -390,24 +392,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pu7-XO-TM0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1012" y="-306"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="LsM-BS-1zA">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oNd-gw-Ouf" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0HL-AT-s6a">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Azj-Ec-1i1" kind="relationship" relationship="rootViewController" id="XCr-xu-96W"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qAA-g6-is3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="574.5" y="1750.5"/>
         </scene>
     </scenes>
     <resources>

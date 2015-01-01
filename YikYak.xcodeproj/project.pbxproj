@@ -17,6 +17,7 @@
 		56FA243C1A52758A005DD3E4 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FA243B1A52758A005DD3E4 /* TableViewController.swift */; };
 		56FA243E1A528581005DD3E4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FA243D1A528581005DD3E4 /* TableViewCell.swift */; };
 		56FA24401A53D99C005DD3E4 /* CustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FA243F1A53D99C005DD3E4 /* CustomTableViewController.swift */; };
+		825933FCF51E67A62C300EBC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A043DA0A8A51ABF79C9D5B80 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08802ECA460E255B08160F71 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		5636A88A1A54DE2D00C66978 /* YikYak-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YikYak-Bridging-Header.h"; sourceTree = "<group>"; };
 		56684CEE1A53EADE00542373 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		56FA24161A527563005DD3E4 /* YikYak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YikYak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56FA241A1A527563005DD3E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -44,6 +47,8 @@
 		56FA243B1A52758A005DD3E4 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		56FA243D1A528581005DD3E4 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		56FA243F1A53D99C005DD3E4 /* CustomTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewController.swift; sourceTree = "<group>"; };
+		6D0BAF168C1DB4DEB0F8732B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A043DA0A8A51ABF79C9D5B80 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				825933FCF51E67A62C300EBC /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +76,8 @@
 				56FA24181A527563005DD3E4 /* YikYak */,
 				56FA242E1A527563005DD3E4 /* YikYakTests */,
 				56FA24171A527563005DD3E4 /* Products */,
+				CBAA8EE917312DB917AF801E /* Pods */,
+				87BB1EEF931A24C238FA2E91 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +103,7 @@
 				56FA243D1A528581005DD3E4 /* TableViewCell.swift */,
 				56FA243F1A53D99C005DD3E4 /* CustomTableViewController.swift */,
 				56684CEE1A53EADE00542373 /* PostViewController.swift */,
+				5636A88A1A54DE2D00C66978 /* YikYak-Bridging-Header.h */,
 			);
 			path = YikYak;
 			sourceTree = "<group>";
@@ -124,6 +133,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		87BB1EEF931A24C238FA2E91 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A043DA0A8A51ABF79C9D5B80 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CBAA8EE917312DB917AF801E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				08802ECA460E255B08160F71 /* Pods.debug.xcconfig */,
+				6D0BAF168C1DB4DEB0F8732B /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -131,9 +157,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 56FA24351A527563005DD3E4 /* Build configuration list for PBXNativeTarget "YikYak" */;
 			buildPhases = (
+				8D8BB6150C4D98E0926386E6 /* Check Pods Manifest.lock */,
 				56FA24121A527563005DD3E4 /* Sources */,
 				56FA24131A527563005DD3E4 /* Frameworks */,
 				56FA24141A527563005DD3E4 /* Resources */,
+				042943B5EC379FF681BE7AEB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -218,6 +246,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		042943B5EC379FF681BE7AEB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D8BB6150C4D98E0926386E6 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		56FA24121A527563005DD3E4 /* Sources */ = {
@@ -350,21 +411,28 @@
 		};
 		56FA24361A527563005DD3E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08802ECA460E255B08160F71 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = YikYak/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "YikYak/YikYak-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		56FA24371A527563005DD3E4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D0BAF168C1DB4DEB0F8732B /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = YikYak/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "YikYak/YikYak-Bridging-Header.h";
 			};
 			name = Release;
 		};

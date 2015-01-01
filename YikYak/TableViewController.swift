@@ -18,10 +18,15 @@ class TableViewController: UITableViewController {
 
         self.tableView.estimatedRowHeight = 60
         self.tableView.rowHeight = UITableViewAutomaticDimension
-        
-
+        let testObject = PFObject(className: "TestObject")
+        testObject["foo"] = "shrikar";
+        testObject.saveInBackground()
+        println("View did load")
     }
 
+    override func viewWillAppear(animated: Bool) {
+        println("View will appear")
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -41,6 +46,7 @@ class TableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as TableViewCell
         cell.yakText.text = yaks[indexPath.row]
+        cell.yakText.numberOfLines = 0
         cell.count.text = "\((indexPath.row + 1) * 5)"
         cell.time.text = "\((indexPath.row + 1) * 3)m ago"
         cell.replies.text = "\((indexPath.row + 1) * 1) replies"
