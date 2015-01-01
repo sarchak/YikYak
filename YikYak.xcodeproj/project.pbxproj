@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56684CEF1A53EADE00542373 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56684CEE1A53EADE00542373 /* PostViewController.swift */; };
 		56FA241C1A527563005DD3E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FA241B1A527563005DD3E4 /* AppDelegate.swift */; };
 		56FA241E1A527563005DD3E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FA241D1A527563005DD3E4 /* ViewController.swift */; };
 		56FA24211A527563005DD3E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56FA241F1A527563005DD3E4 /* Main.storyboard */; };
 		56FA24231A527563005DD3E4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56FA24221A527563005DD3E4 /* Images.xcassets */; };
 		56FA24261A527563005DD3E4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56FA24241A527563005DD3E4 /* LaunchScreen.xib */; };
 		56FA24321A527563005DD3E4 /* YikYakTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FA24311A527563005DD3E4 /* YikYakTests.swift */; };
+		56FA243C1A52758A005DD3E4 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FA243B1A52758A005DD3E4 /* TableViewController.swift */; };
+		56FA243E1A528581005DD3E4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FA243D1A528581005DD3E4 /* TableViewCell.swift */; };
+		56FA24401A53D99C005DD3E4 /* CustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FA243F1A53D99C005DD3E4 /* CustomTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		56684CEE1A53EADE00542373 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		56FA24161A527563005DD3E4 /* YikYak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YikYak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56FA241A1A527563005DD3E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56FA241B1A527563005DD3E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +41,9 @@
 		56FA242B1A527563005DD3E4 /* YikYakTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YikYakTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		56FA24301A527563005DD3E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56FA24311A527563005DD3E4 /* YikYakTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YikYakTests.swift; sourceTree = "<group>"; };
+		56FA243B1A52758A005DD3E4 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		56FA243D1A528581005DD3E4 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		56FA243F1A53D99C005DD3E4 /* CustomTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +91,10 @@
 				56FA24221A527563005DD3E4 /* Images.xcassets */,
 				56FA24241A527563005DD3E4 /* LaunchScreen.xib */,
 				56FA24191A527563005DD3E4 /* Supporting Files */,
+				56FA243B1A52758A005DD3E4 /* TableViewController.swift */,
+				56FA243D1A528581005DD3E4 /* TableViewCell.swift */,
+				56FA243F1A53D99C005DD3E4 /* CustomTableViewController.swift */,
+				56684CEE1A53EADE00542373 /* PostViewController.swift */,
 			);
 			path = YikYak;
 			sourceTree = "<group>";
@@ -212,8 +224,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56684CEF1A53EADE00542373 /* PostViewController.swift in Sources */,
 				56FA241E1A527563005DD3E4 /* ViewController.swift in Sources */,
+				56FA243E1A528581005DD3E4 /* TableViewCell.swift in Sources */,
+				56FA243C1A52758A005DD3E4 /* TableViewController.swift in Sources */,
 				56FA241C1A527563005DD3E4 /* AppDelegate.swift in Sources */,
+				56FA24401A53D99C005DD3E4 /* CustomTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +421,7 @@
 				56FA24371A527563005DD3E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		56FA24381A527563005DD3E4 /* Build configuration list for PBXNativeTarget "YikYakTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +430,7 @@
 				56FA243A1A527563005DD3E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
