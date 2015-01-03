@@ -109,7 +109,7 @@
                         </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="r3i-jk-pR0">
                             <connections>
-                                <segue destination="y7B-xy-HLg" kind="presentation" id="Fy6-dz-kgy"/>
+                                <segue destination="9Hw-XH-Irf" kind="presentation" id="CmT-YC-Qj7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -117,6 +117,61 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jtk-4y-Ctb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="358" y="-306"/>
+        </scene>
+        <!--Yak-->
+        <scene sceneID="9aI-Go-nTw">
+            <objects>
+                <viewController id="Vzs-K5-NFY" customClass="PostViewController" customModule="YikYak" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MjZ-cc-lwc"/>
+                        <viewControllerLayoutGuide type="bottom" id="9Dk-wl-CPb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NGd-2R-doV">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="What's on your mind?" translatesAutoresizingMaskIntoConstraints="NO" id="4Bl-xJ-eNx">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="scrollIndicatorInsets" minX="0.0" minY="50" maxX="0.0" maxY="0.0"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="10" y="0.0" width="380" height="200"/>
+                                </variation>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="4Bl-xJ-eNx"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="4Bl-xJ-eNx"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Yak" id="csL-hf-K2w">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="xri-tR-ufB">
+                            <connections>
+                                <action selector="cancelPressed:" destination="Vzs-K5-NFY" id="VZL-qh-WYY"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Post" id="frx-ek-nPy">
+                            <connections>
+                                <action selector="postPressed:" destination="Vzs-K5-NFY" id="qkI-JV-Em4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="postView" destination="4Bl-xJ-eNx" id="ciM-mZ-uxT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GZB-dn-RHe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2053.5" y="-306"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JJy-V0-XjD">
@@ -196,19 +251,22 @@
             <point key="canvasLocation" x="-1102" y="-306"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="waf-AD-wwZ">
+        <scene sceneID="tqf-6W-UYd">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="y7B-xy-HLg" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9Hw-XH-Irf" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MyL-Cd-8Ow">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zTU-HU-kAW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Vzs-K5-NFY" kind="relationship" relationship="rootViewController" id="HCu-wN-e9L"/>
+                    </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="n6m-io-93W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QMi-4n-Iwv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1116" y="-296.25"/>
+            <point key="canvasLocation" x="1135.5" y="-306"/>
         </scene>
     </scenes>
     <resources>
