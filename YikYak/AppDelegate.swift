@@ -27,8 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabbar.barTintColor = UIColor(red: 168.0/255, green: 215.0/255, blue: 111.0/255, alpha: 1)
         tabbar.tintColor = UIColor.whiteColor()
         
+        /* Set you appid and key */
+        Parse.setApplicationId("xxxxx", clientKey: "xxx")
         
-        Parse.setApplicationId("hyW96ZYUvb5gx0USDPginZUduscaOO43oqb8ADxN", clientKey: "n4mBYIQnbuEvhvdlW1p3kZt81m37lELwfIENNool")
         return true
     }
 

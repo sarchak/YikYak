@@ -32,6 +32,20 @@ class TableViewController: PFQueryTableViewController, CLLocationManagerDelegate
 
     }
     
+    private func alert(message : String) {
+        let alert = UIAlertController(title: "Oops something went wrong.", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        let action = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
+        let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
+        let settings = UIAlertAction(title: "Settings", style: UIAlertActionStyle.Default) { (action) -> Void in
+            UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
+            return
+        }
+        alert.addAction(settings)
+        alert.addAction(action)
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.estimatedRowHeight = 60
@@ -47,12 +61,7 @@ class TableViewController: PFQueryTableViewController, CLLocationManagerDelegate
     }
 
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
-        let alert = UIAlertController(title: "Cannot fetch your location", message: "Please enable location in the settings menu", preferredStyle: UIAlertControllerStyle.Alert)
-        let action = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
-        let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
-        alert.addAction(cancel)
-        alert.addAction(action)
-        self.presentViewController(alert, animated: true, completion: nil)
+        alert("Cannot fetch your location")
     }
     
     override func queryForTable() -> PFQuery! {
@@ -78,12 +87,7 @@ class TableViewController: PFQueryTableViewController, CLLocationManagerDelegate
             println(location.coordinate)
             currLocation = location.coordinate
         } else {
-            let alert = UIAlertController(title: "Cannot fetch your location", message: "Please enable location in the settings menu", preferredStyle: UIAlertControllerStyle.Alert)
-            let action = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
-            let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
-            alert.addAction(cancel)
-            alert.addAction(action)
-            self.presentViewController(alert, animated: true, completion: nil)
+            alert("Cannot fetch your location")
         }
     }
     
@@ -102,7 +106,8 @@ class TableViewController: PFQueryTableViewController, CLLocationManagerDelegate
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as TableViewCell
         cell.yakText.text = object.valueForKey("text") as String
         cell.yakText.numberOfLines = 0
-        cell.count.text = "\((indexPath.row + 1) * 5)"
+        let score = object.valueForKey("count") as Int
+        cell.count.text = "\(score)"
         cell.time.text = "\((indexPath.row + 1) * 3)m ago"
         cell.replies.text = "\((indexPath.row + 1) * 1) replies"
         return cell
@@ -111,13 +116,20 @@ class TableViewController: PFQueryTableViewController, CLLocationManagerDelegate
     @IBAction func topButton(sender: AnyObject) {
         let hitPoint = sender.convertPoint(CGPointZero, toView: self.tableView)
         let hitIndex = self.tableView.indexPathForRowAtPoint(hitPoint)
-        
+        let object = objectAtIndexPath(hitIndex)
+        object.incrementKey("count")
+        object.saveInBackground()
+        self.tableView.reloadData()
         NSLog("Top Index Path \(hitIndex?.row)")
     }
 
     @IBAction func bottomButton(sender: AnyObject) {
         let hitPoint = sender.convertPoint(CGPointZero, toView: self.tableView)
         let hitIndex = self.tableView.indexPathForRowAtPoint(hitPoint)
+        let object = objectAtIndexPath(hitIndex)
+        object.incrementKey("count", byAmount: -1)
+        object.saveInBackground()
+        self.tableView.reloadData()
         NSLog("Bottom Index Path \(hitIndex?.row)")
     }
    
