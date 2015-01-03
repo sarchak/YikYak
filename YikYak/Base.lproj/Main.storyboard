@@ -24,7 +24,7 @@
                                             <state key="normal" image="up">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
-                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
                                                 <rect key="frame" x="360" y="5" width="30" height="22"/>
                                             </variation>
                                             <connections>
@@ -42,9 +42,6 @@
                                             <state key="normal" image="down">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
-                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                <rect key="frame" x="360" y="56" width="30" height="38"/>
-                                            </variation>
                                             <connections>
                                                 <action selector="bottomButton:" destination="izm-4i-5du" eventType="touchUpInside" id="1pu-Kc-PrS"/>
                                             </connections>
@@ -75,7 +72,7 @@
                                         <constraint firstItem="N21-wd-3US" firstAttribute="top" secondItem="NRT-iZ-bG1" secondAttribute="bottom" constant="29" id="Hyk-jG-z94"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="bLh-UX-Hh3" secondAttribute="bottom" constant="36.5" id="JpO-eh-U9Z"/>
                                         <constraint firstItem="N21-wd-3US" firstAttribute="top" secondItem="NRT-iZ-bG1" secondAttribute="bottom" constant="29" id="OvW-Bw-uqW"/>
-                                        <constraint firstItem="NRT-iZ-bG1" firstAttribute="leading" secondItem="bLh-UX-Hh3" secondAttribute="trailing" constant="36" id="S5i-AP-u6R"/>
+                                        <constraint firstItem="NRT-iZ-bG1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bLh-UX-Hh3" secondAttribute="trailing" constant="36" id="S5i-AP-u6R"/>
                                         <constraint firstItem="Phi-R8-TH1" firstAttribute="bottom" secondItem="sCI-lx-yGP" secondAttribute="bottomMargin" id="TxF-Ss-dkn"/>
                                         <constraint firstItem="bwL-X8-RCe" firstAttribute="leading" secondItem="sCI-lx-yGP" secondAttribute="leadingMargin" constant="6" id="VVk-cx-4aO"/>
                                         <constraint firstAttribute="centerY" secondItem="lei-mu-QyI" secondAttribute="centerY" id="XfZ-t2-A6F"/>
@@ -109,11 +106,10 @@
                                 <segment title="New"/>
                                 <segment title="Hot"/>
                             </segments>
-                            <color key="tintColor" red="1" green="0.98808641669999997" blue="0.97707815860000002" alpha="1" colorSpace="calibratedRGB"/>
                         </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="r3i-jk-pR0">
                             <connections>
-                                <segue destination="Gh8-3j-0Pd" kind="presentation" id="tPZ-b9-1kF"/>
+                                <segue destination="y7B-xy-HLg" kind="presentation" id="Fy6-dz-kgy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -122,60 +118,61 @@
             </objects>
             <point key="canvasLocation" x="358" y="-306"/>
         </scene>
-        <!--Post View Controller-->
-        <scene sceneID="5dh-bx-fTz">
+        <!--Yak-->
+        <scene sceneID="QF5-Y5-nFW">
             <objects>
-                <viewController id="ZtP-9y-N8V" customClass="PostViewController" customModule="YikYak" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6FL-6p-5Bf" customClass="PostViewController" customModule="YikYak" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="isy-fn-79x"/>
-                        <viewControllerLayoutGuide type="bottom" id="arC-4h-HsG"/>
+                        <viewControllerLayoutGuide type="top" id="TZm-Wd-XLu"/>
+                        <viewControllerLayoutGuide type="bottom" id="JnU-dw-hgj"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" placeholderIntrinsicWidth="400" placeholderIntrinsicHeight="800" id="M8F-tF-0lN">
+                    <view key="view" contentMode="scaleToFill" id="DMq-zo-0Ks">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="What's on your mind?" translatesAutoresizingMaskIntoConstraints="NO" id="JXu-ex-dfu">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="What's on your mind?" translatesAutoresizingMaskIntoConstraints="NO" id="B5a-q4-gni">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.98808641669999997" blue="0.97707815860000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="scrollIndicatorInsets" minX="0.0" minY="50" maxX="0.0" maxY="0.0"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="89" width="368" height="100"/>
+                                    <rect key="frame" x="10" y="0.0" width="380" height="200"/>
                                 </variation>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="JXu-ex-dfu"/>
+                                <exclude reference="B5a-q4-gni"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="JXu-ex-dfu"/>
+                                <include reference="B5a-q4-gni"/>
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="vUr-sH-oHE">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="TLM-fY-6UG">
+                    <navigationItem key="navigationItem" title="Yak" id="Q77-br-mtF">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="lS8-4E-6fV">
                             <connections>
-                                <action selector="cancelPressed:" destination="ZtP-9y-N8V" id="TDi-gP-T5X"/>
+                                <action selector="cancelPressed:" destination="6FL-6p-5Bf" id="qz6-cm-Ezy"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Post" id="BfF-rH-vaK">
+                        <barButtonItem key="rightBarButtonItem" title="Post" id="fGT-Bf-ycN">
                             <connections>
-                                <action selector="postPressed:" destination="ZtP-9y-N8V" id="cV8-Ot-Ioa"/>
+                                <action selector="postPressed:" destination="6FL-6p-5Bf" id="8iX-DM-0Fu"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="postView" destination="JXu-ex-dfu" id="3YP-7i-zFm"/>
+                        <outlet property="postView" destination="B5a-q4-gni" id="OkB-3b-kjk"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Px2-LV-X32" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lpf-TQ-aob" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1770" y="-306"/>
+            <point key="canvasLocation" x="1908" y="-296.25"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JJy-V0-XjD">
@@ -376,22 +373,22 @@
             <point key="canvasLocation" x="-1102" y="-306"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="3e8-Cc-wv4">
+        <scene sceneID="waf-AD-wwZ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gh8-3j-0Pd" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="y7B-xy-HLg" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XeZ-eX-E8b">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MyL-Cd-8Ow">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="ZtP-9y-N8V" kind="relationship" relationship="rootViewController" id="Kbc-0I-Ppb"/>
+                        <segue destination="6FL-6p-5Bf" kind="relationship" relationship="rootViewController" id="2TK-gN-dom"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pu7-XO-TM0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n6m-io-93W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1012" y="-306"/>
+            <point key="canvasLocation" x="1116" y="-296.25"/>
         </scene>
     </scenes>
     <resources>

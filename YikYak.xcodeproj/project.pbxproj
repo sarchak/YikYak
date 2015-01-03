@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5636A88E1A54E4AA00C66978 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5636A88D1A54E4AA00C66978 /* CoreLocation.framework */; };
+		5636A8901A54E4B100C66978 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5636A88F1A54E4B100C66978 /* MapKit.framework */; };
+		5636A8921A54EEB500C66978 /* home.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 5636A8911A54EEB500C66978 /* home.gpx */; };
 		56684CEF1A53EADE00542373 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56684CEE1A53EADE00542373 /* PostViewController.swift */; };
 		56FA241C1A527563005DD3E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FA241B1A527563005DD3E4 /* AppDelegate.swift */; };
 		56FA241E1A527563005DD3E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FA241D1A527563005DD3E4 /* ViewController.swift */; };
@@ -33,6 +36,9 @@
 /* Begin PBXFileReference section */
 		08802ECA460E255B08160F71 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5636A88A1A54DE2D00C66978 /* YikYak-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YikYak-Bridging-Header.h"; sourceTree = "<group>"; };
+		5636A88D1A54E4AA00C66978 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		5636A88F1A54E4B100C66978 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		5636A8911A54EEB500C66978 /* home.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = home.gpx; sourceTree = "<group>"; };
 		56684CEE1A53EADE00542373 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		56FA24161A527563005DD3E4 /* YikYak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YikYak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56FA241A1A527563005DD3E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,6 +62,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5636A8901A54E4B100C66978 /* MapKit.framework in Frameworks */,
+				5636A88E1A54E4AA00C66978 /* CoreLocation.framework in Frameworks */,
 				825933FCF51E67A62C300EBC /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -111,6 +119,7 @@
 		56FA24191A527563005DD3E4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5636A8911A54EEB500C66978 /* home.gpx */,
 				56FA241A1A527563005DD3E4 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -136,6 +145,8 @@
 		87BB1EEF931A24C238FA2E91 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5636A88F1A54E4B100C66978 /* MapKit.framework */,
+				5636A88D1A54E4AA00C66978 /* CoreLocation.framework */,
 				A043DA0A8A51ABF79C9D5B80 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -201,6 +212,11 @@
 				TargetAttributes = {
 					56FA24151A527563005DD3E4 = {
 						CreatedOnToolsVersion = 6.1.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					56FA242A1A527563005DD3E4 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -234,6 +250,7 @@
 			files = (
 				56FA24211A527563005DD3E4 /* Main.storyboard in Resources */,
 				56FA24261A527563005DD3E4 /* LaunchScreen.xib in Resources */,
+				5636A8921A54EEB500C66978 /* home.gpx in Resources */,
 				56FA24231A527563005DD3E4 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -18,12 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let navbar = UINavigationBar.appearance()
         navbar.barTintColor = UIColor(red: 168.0/255, green: 215.0/255, blue: 111.0/255, alpha: 1)
+        let font = UIFont(name: "Avenir", size: 18)
+        navbar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor(), NSFontAttributeName: font!]
+        navbar.tintColor = UIColor.whiteColor()
+       
         
         let tabbar = UITabBar.appearance()
         tabbar.barTintColor = UIColor(red: 168.0/255, green: 215.0/255, blue: 111.0/255, alpha: 1)
         tabbar.tintColor = UIColor.whiteColor()
         
-
+        
         Parse.setApplicationId("hyW96ZYUvb5gx0USDPginZUduscaOO43oqb8ADxN", clientKey: "n4mBYIQnbuEvhvdlW1p3kZt81m37lELwfIENNool")
         return true
     }
