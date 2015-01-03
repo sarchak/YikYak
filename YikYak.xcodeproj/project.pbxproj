@@ -35,7 +35,7 @@
 
 /* Begin PBXFileReference section */
 		08802ECA460E255B08160F71 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		5636A88A1A54DE2D00C66978 /* YikYak-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YikYak-Bridging-Header.h"; sourceTree = "<group>"; };
+		56302FEA1A58586600DB84E4 /* YikYak-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YikYak-Bridging-Header.h"; sourceTree = "<group>"; };
 		5636A88D1A54E4AA00C66978 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		5636A88F1A54E4B100C66978 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		5636A8911A54EEB500C66978 /* home.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = home.gpx; sourceTree = "<group>"; };
@@ -111,7 +111,7 @@
 				56FA243D1A528581005DD3E4 /* TableViewCell.swift */,
 				56FA243F1A53D99C005DD3E4 /* CustomTableViewController.swift */,
 				56684CEE1A53EADE00542373 /* PostViewController.swift */,
-				5636A88A1A54DE2D00C66978 /* YikYak-Bridging-Header.h */,
+				56302FEA1A58586600DB84E4 /* YikYak-Bridging-Header.h */,
 			);
 			path = YikYak;
 			sourceTree = "<group>";

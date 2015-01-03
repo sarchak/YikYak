@@ -1,0 +1,2 @@
+PODS_PARSE_IOS_SDK_FRAMEWORK_SEARCH_PATHS = "$(PODS_ROOT)/Parse-iOS-SDK"
+PODS_PARSE_IOS_SDK_OTHER_LDFLAGS = -l"sqlite3" -l"z" -framework "AudioToolbox" -framework "CFNetwork" -framework "CoreGraphics" -framework "CoreLocation" -framework "MobileCoreServices" -framework "Parse" -framework "QuartzCore" -framework "Security" -framework "StoreKit" -framework "SystemConfiguration" -weak_framework "Accounts" -weak_framework "Social"

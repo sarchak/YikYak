@@ -1,0 +1,19 @@
+PODS:
+  - Bolts (1.1.3)
+  - Parse-iOS-SDK (1.3.0):
+    - Bolts (~> 1.1.2)
+  - Reachability (3.2)
+  - RKDropdownAlert (0.1.1)
+
+DEPENDENCIES:
+  - Parse-iOS-SDK (~> 1.3)
+  - Reachability (~> 3.2)
+  - RKDropdownAlert
+
+SPEC CHECKSUMS:
+  Bolts: 3db0a875235e0c9042b013af13af0f00f79b102c
+  Parse-iOS-SDK: fb847b9d3e9444a27f78a81e9496de1cacefd1da
+  Reachability: 1ef8adf5c4e3d362f96515d4278f68dad3c26930
+  RKDropdownAlert: f9ef694f0b54e075b5e0bd61827bd69c8d29c051
+
+COCOAPODS: 0.34.4

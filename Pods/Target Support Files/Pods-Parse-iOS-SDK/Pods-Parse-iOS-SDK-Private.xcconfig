@@ -1,0 +1,6 @@
+#include "Pods-Parse-iOS-SDK.xcconfig"
+FRAMEWORK_SEARCH_PATHS = ${PODS_PARSE_IOS_SDK_FRAMEWORK_SEARCH_PATHS}
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Build" "${PODS_ROOT}/Headers/Build/Parse-iOS-SDK" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Bolts" "${PODS_ROOT}/Headers/Public/Parse-iOS-SDK" "${PODS_ROOT}/Headers/Public/RKDropdownAlert" "${PODS_ROOT}/Headers/Public/Reachability"
+OTHER_LDFLAGS = ${PODS_PARSE_IOS_SDK_OTHER_LDFLAGS} -ObjC
+PODS_ROOT = ${SRCROOT}

@@ -16,6 +16,15 @@ class PostViewController: UIViewController, UITextViewDelegate, CLLocationManage
     var reset:Bool = false
     let locationManager = CLLocationManager()
 
+    private func  alert() {
+    let alert = UIAlertController(title: "Cannot fetch your location", message: "Please enable location in the settings menu", preferredStyle: UIAlertControllerStyle.Alert)
+    let action = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
+    let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
+    alert.addAction(cancel)
+    alert.addAction(action)
+    self.presentViewController(alert, animated: true, completion: nil)
+
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.automaticallyAdjustsScrollViewInsets = false
@@ -34,7 +43,7 @@ class PostViewController: UIViewController, UITextViewDelegate, CLLocationManage
             let location = locations[0] as CLLocation
             currLocation = location.coordinate
         } else {
-            NSLog("Couldn't find the location")
+            alert()
         }
     }
     
@@ -59,7 +68,7 @@ class PostViewController: UIViewController, UITextViewDelegate, CLLocationManage
             testObject.saveInBackground()
             self.dismissViewControllerAnimated(true , completion: nil)
         } else {
-            NSLog("Location not found")
+            alert()
         }
 
 

@@ -118,62 +118,6 @@
             </objects>
             <point key="canvasLocation" x="358" y="-306"/>
         </scene>
-        <!--Yak-->
-        <scene sceneID="QF5-Y5-nFW">
-            <objects>
-                <viewController id="6FL-6p-5Bf" customClass="PostViewController" customModule="YikYak" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="TZm-Wd-XLu"/>
-                        <viewControllerLayoutGuide type="bottom" id="JnU-dw-hgj"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="DMq-zo-0Ks">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="What's on your mind?" translatesAutoresizingMaskIntoConstraints="NO" id="B5a-q4-gni">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" red="1" green="0.98808641669999997" blue="0.97707815860000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="scrollIndicatorInsets" minX="0.0" minY="50" maxX="0.0" maxY="0.0"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="10" y="0.0" width="380" height="200"/>
-                                </variation>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="B5a-q4-gni"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="B5a-q4-gni"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <navigationItem key="navigationItem" title="Yak" id="Q77-br-mtF">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="lS8-4E-6fV">
-                            <connections>
-                                <action selector="cancelPressed:" destination="6FL-6p-5Bf" id="qz6-cm-Ezy"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Post" id="fGT-Bf-ycN">
-                            <connections>
-                                <action selector="postPressed:" destination="6FL-6p-5Bf" id="8iX-DM-0Fu"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="postView" destination="B5a-q4-gni" id="OkB-3b-kjk"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Lpf-TQ-aob" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1908" y="-296.25"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="JJy-V0-XjD">
             <objects>
@@ -231,127 +175,6 @@
             </objects>
             <point key="canvasLocation" x="358" y="419"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="JNB-o7-jd9">
-            <objects>
-                <tableViewController id="Azj-Ec-1i1" customClass="TableViewController" customModule="YikYak" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="wvG-dt-0Gl">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="100" id="ssd-uL-L70" customClass="TableViewCell" customModule="YikYak" customModuleProvider="target">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ssd-uL-L70" id="jZu-uA-KSe">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Building a beautiful Yik Yak Clone in Swift" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IwC-hX-OXE">
-                                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5m ago" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BwP-2b-0cc">
-                                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 replies" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbc-86-Qu4">
-                                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCl-Dj-MD2">
-                                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                            <state key="normal" image="up">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yFG-6Z-xXz">
-                                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                            <state key="normal" image="down">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                        </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7sG-bL-alo">
-                                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="xbc-86-Qu4" secondAttribute="bottom" constant="8" id="16L-A4-gfn"/>
-                                        <constraint firstItem="xbc-86-Qu4" firstAttribute="leading" secondItem="BwP-2b-0cc" secondAttribute="trailing" constant="64" id="CPG-4h-dnh"/>
-                                        <constraint firstAttribute="trailing" secondItem="yFG-6Z-xXz" secondAttribute="trailing" constant="10" id="GTe-EN-YQu"/>
-                                        <constraint firstItem="cCl-Dj-MD2" firstAttribute="leading" secondItem="IwC-hX-OXE" secondAttribute="trailing" constant="10" id="Ked-36-bPr"/>
-                                        <constraint firstAttribute="bottom" secondItem="BwP-2b-0cc" secondAttribute="bottom" constant="8" id="QrV-CG-3ef"/>
-                                        <constraint firstAttribute="trailing" secondItem="7sG-bL-alo" secondAttribute="trailing" constant="10" id="iYf-pk-h1T"/>
-                                        <constraint firstItem="IwC-hX-OXE" firstAttribute="top" secondItem="jZu-uA-KSe" secondAttribute="top" constant="10" id="idJ-0W-OTO"/>
-                                        <constraint firstItem="IwC-hX-OXE" firstAttribute="leading" secondItem="jZu-uA-KSe" secondAttribute="leading" constant="10" id="lhd-oP-J14"/>
-                                        <constraint firstItem="BwP-2b-0cc" firstAttribute="leading" secondItem="jZu-uA-KSe" secondAttribute="leading" constant="10" id="uA6-V5-yLi"/>
-                                        <constraint firstAttribute="trailing" secondItem="cCl-Dj-MD2" secondAttribute="trailing" constant="10" id="yO2-Xo-fCn"/>
-                                    </constraints>
-                                    <variation key="default">
-                                        <mask key="subviews">
-                                            <exclude reference="IwC-hX-OXE"/>
-                                            <exclude reference="BwP-2b-0cc"/>
-                                            <exclude reference="xbc-86-Qu4"/>
-                                            <exclude reference="cCl-Dj-MD2"/>
-                                            <exclude reference="yFG-6Z-xXz"/>
-                                            <exclude reference="7sG-bL-alo"/>
-                                        </mask>
-                                        <mask key="constraints">
-                                            <exclude reference="iYf-pk-h1T"/>
-                                            <exclude reference="QrV-CG-3ef"/>
-                                            <exclude reference="uA6-V5-yLi"/>
-                                            <exclude reference="idJ-0W-OTO"/>
-                                            <exclude reference="lhd-oP-J14"/>
-                                            <exclude reference="16L-A4-gfn"/>
-                                            <exclude reference="CPG-4h-dnh"/>
-                                            <exclude reference="Ked-36-bPr"/>
-                                            <exclude reference="yO2-Xo-fCn"/>
-                                            <exclude reference="GTe-EN-YQu"/>
-                                        </mask>
-                                    </variation>
-                                    <variation key="heightClass=regular-widthClass=compact">
-                                        <mask key="subviews">
-                                            <include reference="IwC-hX-OXE"/>
-                                            <include reference="BwP-2b-0cc"/>
-                                            <include reference="xbc-86-Qu4"/>
-                                            <include reference="cCl-Dj-MD2"/>
-                                            <include reference="yFG-6Z-xXz"/>
-                                            <include reference="7sG-bL-alo"/>
-                                        </mask>
-                                        <mask key="constraints">
-                                            <include reference="iYf-pk-h1T"/>
-                                            <include reference="QrV-CG-3ef"/>
-                                            <include reference="uA6-V5-yLi"/>
-                                            <include reference="idJ-0W-OTO"/>
-                                            <include reference="lhd-oP-J14"/>
-                                            <include reference="16L-A4-gfn"/>
-                                            <include reference="CPG-4h-dnh"/>
-                                            <include reference="Ked-36-bPr"/>
-                                            <include reference="yO2-Xo-fCn"/>
-                                            <include reference="GTe-EN-YQu"/>
-                                        </mask>
-                                    </variation>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Azj-Ec-1i1" id="Uy9-h3-Nk3"/>
-                            <outlet property="delegate" destination="Azj-Ec-1i1" id="Uzi-6C-bKo"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="ndn-rx-w8r"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YaR-53-FSe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1492.5" y="1750.5"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="h2r-IW-gtz">
             <objects>
@@ -382,9 +205,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="6FL-6p-5Bf" kind="relationship" relationship="rootViewController" id="2TK-gN-dom"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n6m-io-93W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
