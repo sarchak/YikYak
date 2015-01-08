@@ -45,7 +45,12 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         
 //        self.tableView.contentInset = UIEdgeInsetsZero  
 //        self.tableView.scrollIndicatorInsets = UIEdgeInsetsZero
-        
+
+//        self.edgesForExtendedLayout = UIRectEdge.None
+//        self.extendedLayoutIncludesOpaqueBars = false
+//        self.automaticallyAdjustsScrollViewInsets = true
+//
+//        
         println("Keyboard will show Keyboard")
         println("TableView Frame :\(self.tableView.frame)")
         println("TableView Frame :\(self.tableView.bounds)")
@@ -53,16 +58,18 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         println("FooterView Frame :\(self.footerView?.bounds)")
         println("==================")
 
+
         println(self.tableView.contentOffset)
         var info:NSDictionary = notification.userInfo!
         var keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as NSValue).CGRectValue()
         
-        var keyboardHeight:CGFloat = keyboardSize.height - 64
+        var keyboardHeight:CGFloat =  keyboardSize.height - 44
         
+        println("Height :\(keyboardHeight)")
         var animationDuration:CGFloat = info[UIKeyboardAnimationDurationUserInfoKey] as CGFloat
         
-        var contentInsets: UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, (keyboardSize.height), 0.0);
-        self.tableView.contentInset = UIEdgeInsetsMake(0.0, 0.0, (keyboardSize.height), 0.0);
+        var contentInsets: UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardHeight, 0.0);
+        self.tableView.contentInset = contentInsets
         self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(0.0, 0.0, (keyboardSize.height), 0.0);
         
     }
@@ -73,6 +80,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
 //        self.tableView.contentInset = UIEdgeInsetsMake(0.0, 0.0, 55, 0.0);
 //        self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(0.0, 0.0, 55, 0.0);
      
+        self.tableView.contentOffset = CGPoint(x: 0, y: 0)
         self.tableView.contentInset = UIEdgeInsetsZero
         self.tableView.scrollIndicatorInsets = UIEdgeInsetsZero
         println("Keyboard will hide Keyboard")
@@ -159,7 +167,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     
     func textViewDidBeginEditing(textView: UITextView) {
         println("textViewDidBeginEditing \(self.tableView.contentOffset)")
-        self.tableView.scrollsToTop = false
+        self.tableView.scrollsToTop = true
     }
     
     func textViewDidChange(textView: UITextView) {
