@@ -156,28 +156,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="CaD-7D-Z4u" firstAttribute="top" secondItem="WzT-m6-yyJ" secondAttribute="bottom" constant="1" id="Bhu-Gh-ckE">
-                                <variation key="heightClass=regular-widthClass=compact" constant="-50"/>
-                            </constraint>
-                            <constraint firstItem="WzT-m6-yyJ" firstAttribute="leading" secondItem="SKB-Kg-5m3" secondAttribute="leadingMargin" constant="-16" id="MsI-3j-c1d"/>
-                            <constraint firstItem="CaD-7D-Z4u" firstAttribute="top" secondItem="WzT-m6-yyJ" secondAttribute="bottom" constant="1" id="XcQ-NS-ZRP">
-                                <variation key="heightClass=regular-widthClass=compact" constant="-50"/>
-                            </constraint>
-                            <constraint firstAttribute="trailingMargin" secondItem="WzT-m6-yyJ" secondAttribute="trailing" constant="-16" id="Yge-Uq-Xj3"/>
-                            <constraint firstItem="WzT-m6-yyJ" firstAttribute="top" secondItem="8na-EN-Gv4" secondAttribute="bottom" constant="236" id="nKY-TV-Nna">
-                                <variation key="heightClass=regular-widthClass=compact" constant="237"/>
-                            </constraint>
+                            <constraint firstAttribute="trailing" secondItem="WzT-m6-yyJ" secondAttribute="trailing" id="1XB-Yl-n1k"/>
+                            <constraint firstItem="WzT-m6-yyJ" firstAttribute="leading" secondItem="SKB-Kg-5m3" secondAttribute="leading" id="Hyo-2q-ZGt"/>
+                            <constraint firstItem="WzT-m6-yyJ" firstAttribute="top" secondItem="SKB-Kg-5m3" secondAttribute="top" id="SkU-we-BqR"/>
+                            <constraint firstAttribute="bottom" secondItem="WzT-m6-yyJ" secondAttribute="bottom" id="m22-lP-aWn"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="WzT-m6-yyJ"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="MsI-3j-c1d"/>
-                                <exclude reference="Yge-Uq-Xj3"/>
-                                <exclude reference="nKY-TV-Nna"/>
-                                <exclude reference="Bhu-Gh-ckE"/>
-                                <exclude reference="XcQ-NS-ZRP"/>
+                                <exclude reference="1XB-Yl-n1k"/>
+                                <exclude reference="Hyo-2q-ZGt"/>
+                                <exclude reference="SkU-we-BqR"/>
+                                <exclude reference="m22-lP-aWn"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -185,11 +177,10 @@
                                 <include reference="WzT-m6-yyJ"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="MsI-3j-c1d"/>
-                                <include reference="Yge-Uq-Xj3"/>
-                                <include reference="nKY-TV-Nna"/>
-                                <include reference="Bhu-Gh-ckE"/>
-                                <include reference="XcQ-NS-ZRP"/>
+                                <include reference="1XB-Yl-n1k"/>
+                                <include reference="Hyo-2q-ZGt"/>
+                                <include reference="SkU-we-BqR"/>
+                                <include reference="m22-lP-aWn"/>
                             </mask>
                         </variation>
                     </view>
