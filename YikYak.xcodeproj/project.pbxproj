@@ -11,6 +11,8 @@
 		5636A8901A54E4B100C66978 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5636A88F1A54E4B100C66978 /* MapKit.framework */; };
 		5636A8921A54EEB500C66978 /* home.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 5636A8911A54EEB500C66978 /* home.gpx */; };
 		56684CEF1A53EADE00542373 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56684CEE1A53EADE00542373 /* PostViewController.swift */; };
+		56C68C331A5CF3F400AD5FE7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C68C321A5CF3F400AD5FE7 /* DetailViewController.swift */; };
+		56C68C351A5D00AF00AD5FE7 /* CommentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C68C341A5D00AF00AD5FE7 /* CommentsTableViewController.swift */; };
 		56FA241C1A527563005DD3E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FA241B1A527563005DD3E4 /* AppDelegate.swift */; };
 		56FA241E1A527563005DD3E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FA241D1A527563005DD3E4 /* ViewController.swift */; };
 		56FA24211A527563005DD3E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56FA241F1A527563005DD3E4 /* Main.storyboard */; };
@@ -40,6 +42,8 @@
 		5636A88F1A54E4B100C66978 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		5636A8911A54EEB500C66978 /* home.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = home.gpx; sourceTree = "<group>"; };
 		56684CEE1A53EADE00542373 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		56C68C321A5CF3F400AD5FE7 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		56C68C341A5D00AF00AD5FE7 /* CommentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsTableViewController.swift; sourceTree = "<group>"; };
 		56FA24161A527563005DD3E4 /* YikYak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YikYak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56FA241A1A527563005DD3E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56FA241B1A527563005DD3E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 				56FA243F1A53D99C005DD3E4 /* CustomTableViewController.swift */,
 				56684CEE1A53EADE00542373 /* PostViewController.swift */,
 				56302FEA1A58586600DB84E4 /* YikYak-Bridging-Header.h */,
+				56C68C321A5CF3F400AD5FE7 /* DetailViewController.swift */,
+				56C68C341A5D00AF00AD5FE7 /* CommentsTableViewController.swift */,
 			);
 			path = YikYak;
 			sourceTree = "<group>";
@@ -305,9 +311,11 @@
 				56684CEF1A53EADE00542373 /* PostViewController.swift in Sources */,
 				56FA241E1A527563005DD3E4 /* ViewController.swift in Sources */,
 				56FA243E1A528581005DD3E4 /* TableViewCell.swift in Sources */,
+				56C68C351A5D00AF00AD5FE7 /* CommentsTableViewController.swift in Sources */,
 				56FA243C1A52758A005DD3E4 /* TableViewController.swift in Sources */,
 				56FA241C1A527563005DD3E4 /* AppDelegate.swift in Sources */,
 				56FA24401A53D99C005DD3E4 /* CustomTableViewController.swift in Sources */,
+				56C68C331A5CF3F400AD5FE7 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

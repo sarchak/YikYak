@@ -70,6 +70,7 @@ class PostViewController: UIViewController, UITextViewDelegate, CLLocationManage
             testObject["count"] = 0
             testObject["replies"] = 0            
             testObject["location"] = PFGeoPoint(latitude: currLocation!.latitude , longitude: currLocation!.longitude)
+            testObject["comments"] = []
             testObject.saveInBackground()
             self.dismissViewControllerAnimated(true , completion: nil)
         } else {

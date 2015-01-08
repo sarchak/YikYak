@@ -132,5 +132,15 @@ class TableViewController: PFQueryTableViewController, CLLocationManagerDelegate
         self.tableView.reloadData()
         NSLog("Bottom Index Path \(hitIndex?.row)")
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "yakDetail"){
+            let indexPath = self.tableView.indexPathForSelectedRow()
+            let obj = self.objects[indexPath!.row] as PFObject
+            let navVC = segue.destinationViewController as UINavigationController
+            let detailVC = navVC.topViewController as DetailViewController
+            detailVC.yak = obj
+        }
+    }
    
 }
