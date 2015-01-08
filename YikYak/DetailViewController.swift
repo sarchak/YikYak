@@ -28,11 +28,18 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
 //        yak?.fetchIfNeeded()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyBoardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyBoardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
-        
+        self.tableView.contentInset = UIEdgeInsetsZero
+        self.tableView.scrollIndicatorInsets = UIEdgeInsetsZero
     }
 
+    override func viewWillAppear(animated: Bool) {
+        println("view will appear \(self.tableView.contentOffset)")
+    }
+    
     func keyBoardWillShow(notification: NSNotification) {
-        println("KEyboard will show")
+        
+        println("Keyboard will show notification")
+        println(self.tableView.contentOffset)
         var info:NSDictionary = notification.userInfo!
         var keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as NSValue).CGRectValue()
         
@@ -41,15 +48,16 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         var animationDuration:CGFloat = info[UIKeyboardAnimationDurationUserInfoKey] as CGFloat
         
         var contentInsets: UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, (keyboardSize.height), 0.0);
-        
         self.tableView.contentInset = contentInsets;
         self.tableView.scrollIndicatorInsets = contentInsets;
         
-//        [self.tableView scrollToRowAtIndexPath:self.editingIndexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
     }
     
     func keyBoardWillHide(notification: NSNotification) {
-        println("KEyboard will hide")
+
+        self.tableView.contentInset = UIEdgeInsetsMake(0.0, 0.0, 60, 0.0);
+        self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(0.0, 0.0, 60, 0.0);
+        println("Keyboard will hide notification")
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -65,12 +73,10 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
 //    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        println("number of rows")
         return 15
     }
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        println("number of sections")
         return 1
     }
     
@@ -80,21 +86,19 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         
         //        cell.textLabel?.text = yak?.objectForKey("text") as String
         cell.textLabel?.text = "test"
-        println("Cell for row at index path")
         return cell
     }
     
-    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        if self.footerView != nil {
-            return self.footerView!.bounds.height
-        }
-        return 50
-    }
-    
+//    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+//        if self.footerView != nil {
+//            return self.footerView!.bounds.height
+//        }
+//        return 50
+//    }
+//    
     
     func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-    
-        println("Footerview")
+        println("view for footer \(self.tableView.contentOffset)")
         footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 100))
         footerView?.backgroundColor = UIColor(red: 243.0/255, green: 243.0/255, blue: 243.0/255, alpha: 1)
         commentView = UITextView(frame: CGRect(x: 10, y: 5, width: tableView.bounds.width - 80 , height: 40))
@@ -111,15 +115,18 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         button.addTarget(self, action: "reply", forControlEvents: UIControlEvents.TouchUpInside)
         footerView?.addSubview(button)
         commentView?.delegate = self
+        println("TableView FRame -> FooterView Frame -> FooterView.bounds")
         println(self.tableView.frame)
+        println(self.tableView.bounds)
         println(self.footerView?.frame)
         println(self.footerView?.bounds)
+        println("==================")
         return footerView
     }
     
     
     func textViewDidBeginEditing(textView: UITextView) {
-        
+        println("textViewDidBeginEditing \(self.tableView.contentOffset)")
     }
     
     func textViewDidChange(textView: UITextView) {
@@ -170,7 +177,9 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         yak?.addObject(commentView?.text, forKey: "comments")
         commentView?.text = ""
         self.commentView?.resignFirstResponder()
-        self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Automatic)
+//        self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Automatic)
+        //self.tableView.reloadData()
+        self.tableView.setNeedsDisplay()
         
     }
 }
