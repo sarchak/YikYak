@@ -25,8 +25,6 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-//        self.yakLabel.text = yak?.objectForKey("text") as String
-//        yak?.fetchIfNeeded()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyBoardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyBoardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
         self.tableView.contentInset = UIEdgeInsetsZero
@@ -34,7 +32,8 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         self.edgesForExtendedLayout = UIRectEdge.None
         self.extendedLayoutIncludesOpaqueBars = true
         self.automaticallyAdjustsScrollViewInsets = false
-        
+//        self.tableView.scrollsToTop = false
+
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -52,7 +51,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         
         var contentInsets: UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardHeight, 0.0);
         self.tableView.contentInset = contentInsets
-        self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(0.0, 0.0, (keyboardSize.height), 0.0);
+        self.tableView.scrollIndicatorInsets = contentInsets
         
     }
     
@@ -75,7 +74,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
 //    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 15
+        return
     }
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -137,7 +136,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     
     func textViewDidBeginEditing(textView: UITextView) {
         println("textViewDidBeginEditing \(self.tableView.contentOffset)")
-        self.tableView.scrollsToTop = true
+
     }
     
     func textViewDidChange(textView: UITextView) {
