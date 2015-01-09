@@ -109,7 +109,8 @@ class TableViewController: PFQueryTableViewController, CLLocationManagerDelegate
         let score = object.valueForKey("count") as Int
         cell.count.text = "\(score)"
         cell.time.text = "\((indexPath.row + 1) * 3)m ago"
-        cell.replies.text = "\((indexPath.row + 1) * 1) replies"
+        let replycnt = object.objectForKey("replies") as Int
+        cell.replies.text = "\(replycnt) replies"
         return cell
     }
 

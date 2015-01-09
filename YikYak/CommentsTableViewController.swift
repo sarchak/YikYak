@@ -177,8 +177,7 @@ class CommentsTableViewController: UITableViewController, UITextViewDelegate {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("commentCell", forIndexPath: indexPath) as UITableViewCell
 
-//        cell.textLabel?.text = yak?.objectForKey("text") as String
-        cell.textLabel?.text = "test"
+        cell.textLabel?.text = comments![indexPath.row]
         return cell
     }
 

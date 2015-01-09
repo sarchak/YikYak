@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import MapKit
 class DetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate {
 
     var yak: PFObject?
@@ -18,6 +18,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     var comments: [String]?
     let FOOTERHEIGHT : CGFloat = 50;
     
+    @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var yakLabel: UILabel!
@@ -34,6 +35,20 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         self.automaticallyAdjustsScrollViewInsets = false
 //        self.tableView.scrollsToTop = false
 
+        /* Setup Map */
+        let geo = yak?.objectForKey("location") as PFGeoPoint
+        let coordinate = CLLocationCoordinate2D(latitude: geo.latitude, longitude: geo.longitude)
+        let reg = MKCoordinateRegionMakeWithDistance(coordinate, 1500, 1500)
+        self.mapView.setRegion(reg, animated: true)
+        self.mapView.showsUserLocation = true
+
+        
+        if(yak?.objectForKey("comments") != nil) {
+            comments = yak?.objectForKey("comments") as [String]
+        }
+        println(yak)
+        println(yak?.objectForKey("text"))
+        self.yakLabel.text = yak?.objectForKey("text") as String
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -74,7 +89,13 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
 //    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return
+        println("Comment in section \(comments?.count)")
+        if let count = comments?.count {
+            println("Count is not zero")
+            return count
+        }
+        println("Count is zero")
+        return 0
     }
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -85,8 +106,8 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("commentCell", forIndexPath: indexPath) as UITableViewCell
         
-        //        cell.textLabel?.text = yak?.objectForKey("text") as String
-        cell.textLabel?.text = "test"
+        cell.textLabel?.text = comments![indexPath.row]
+
         return cell
     }
     
@@ -116,12 +137,12 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         button.addTarget(self, action: "reply", forControlEvents: UIControlEvents.TouchUpInside)
         footerView?.addSubview(button)
         commentView?.delegate = self
-        println("TableView FRame -> FooterView Frame -> FooterView.bounds")
-        println(self.tableView.frame)
-        println(self.tableView.bounds)
-        println(footerView?.frame)
-        println(footerView?.bounds)
-        println("==================")
+//        println("TableView FRame -> FooterView Frame -> FooterView.bounds")
+//        println(self.tableView.frame)
+//        println(self.tableView.bounds)
+//        println(footerView?.frame)
+//        println(footerView?.bounds)
+//        println("==================")
         return footerView
     }
     
@@ -183,10 +204,15 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func reply() {
-        println(commentView?.text)
         yak?.addObject(commentView?.text, forKey: "comments")
+        yak?.saveInBackground()
+        if let tmpText = commentView?.text {
+            comments?.append(tmpText)
+        }
         commentView?.text = ""
+        println(comments?.count)
         self.commentView?.resignFirstResponder()
+        self.tableView.reloadData()
 //        self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Automatic)
         //self.tableView.reloadData()
 //        self.tableView.setNeedsDisplay()
