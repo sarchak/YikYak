@@ -104,10 +104,8 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("commentCell", forIndexPath: indexPath) as UITableViewCell
-        
-        cell.textLabel?.text = comments![indexPath.row]
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("commentCell", forIndexPath: indexPath) as CommentTableViewCell
+        cell.commentText?.text = comments![indexPath.row]
         return cell
     }
     
