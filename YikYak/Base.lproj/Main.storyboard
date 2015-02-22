@@ -20,7 +20,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u53-sv-HTT" id="sCI-lx-yGP">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRT-iZ-bG1">
+                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRT-iZ-bG1">
                                             <rect key="frame" x="560" y="5" width="30" height="30"/>
                                             <state key="normal" image="up">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -38,7 +38,7 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N21-wd-3US">
+                                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N21-wd-3US">
                                             <rect key="frame" x="560" y="64" width="30" height="30"/>
                                             <state key="normal" image="down">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -47,7 +47,7 @@
                                                 <action selector="bottomButton:" destination="izm-4i-5du" eventType="touchUpInside" id="1pu-Kc-PrS"/>
                                             </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="This is a beautiful Yik Yak Clone built in Swift" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLh-UX-Hh3">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="This is a beautiful Yik Yak Clone built in Swift" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLh-UX-Hh3">
                                             <rect key="frame" x="14" y="11" width="510" height="40.5"/>
                                             <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="18"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -195,18 +195,12 @@
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="72" width="368" height="21"/>
-                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9u6-HG-MZh">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="118" width="338" height="21"/>
-                                </variation>
                             </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WBi-Tq-Fsi">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -259,10 +253,10 @@
                                 <exclude reference="WBi-Tq-Fsi"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="amT-Ne-tnR"/>
                                 <exclude reference="AYM-lT-WSY"/>
                                 <exclude reference="TjY-gN-8YM"/>
                                 <exclude reference="fJb-0n-xR6"/>
-                                <exclude reference="amT-Ne-tnR"/>
                                 <exclude reference="59b-pi-BKe"/>
                                 <exclude reference="Qqg-UY-q2A"/>
                                 <exclude reference="na6-gF-NFB"/>
@@ -281,10 +275,10 @@
                                 <include reference="WBi-Tq-Fsi"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="amT-Ne-tnR"/>
                                 <include reference="AYM-lT-WSY"/>
                                 <include reference="TjY-gN-8YM"/>
                                 <include reference="fJb-0n-xR6"/>
-                                <include reference="amT-Ne-tnR"/>
                                 <include reference="59b-pi-BKe"/>
                                 <include reference="Qqg-UY-q2A"/>
                                 <include reference="na6-gF-NFB"/>

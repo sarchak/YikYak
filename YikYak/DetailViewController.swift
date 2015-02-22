@@ -24,16 +24,27 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var yakLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        /* Setup the datasource delegate */
         tableView.delegate = self
         tableView.dataSource = self
+        
+        /* Setup the keyboard notifications */
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyBoardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyBoardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+
+        
+        /* Setup the contentInsets */
         self.tableView.contentInset = UIEdgeInsetsZero
         self.tableView.scrollIndicatorInsets = UIEdgeInsetsZero
+        
+        
         self.edgesForExtendedLayout = UIRectEdge.None
+        /* Make sure the content doesn't go below tabbar/navbar */
         self.extendedLayoutIncludesOpaqueBars = true
+        
         self.automaticallyAdjustsScrollViewInsets = false
-//        self.tableView.scrollsToTop = false
+
 
         /* Setup Map */
         let geo = yak?.objectForKey("location") as PFGeoPoint
@@ -48,13 +59,10 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         }
         println(yak)
         println(yak?.objectForKey("text"))
-        self.yakLabel.text = yak?.objectForKey("text") as String
+        self.yakLabel.text = yak?.objectForKey("text") as? String
+
     }
 
-    override func viewWillAppear(animated: Bool) {
-        println("view will appear \(self.tableView.contentOffset)")
-    }
-    
     func keyBoardWillShow(notification: NSNotification) {
         var info:NSDictionary = notification.userInfo!
         var keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as NSValue).CGRectValue()
@@ -77,24 +85,14 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
     
 
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if (segue.identifier == "comments") {
-//            let commentVC = segue.destinationViewController as CommentsTableViewController
-//            commentVC.yak = yak
-//        }
-//    }
-    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        println("Comment in section \(comments?.count)")
         if let count = comments?.count {
-            println("Count is not zero")
             return count
         }
-        println("Count is zero")
         return 0
     }
 
@@ -118,7 +116,6 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
 
     
     func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        println("view for footer \(self.tableView.contentOffset)")
         footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: FOOTERHEIGHT))
         footerView?.backgroundColor = UIColor(red: 243.0/255, green: 243.0/255, blue: 243.0/255, alpha: 1)
         commentView = UITextView(frame: CGRect(x: 10, y: 5, width: tableView.bounds.width - 80 , height: 40))
@@ -135,27 +132,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         button.addTarget(self, action: "reply", forControlEvents: UIControlEvents.TouchUpInside)
         footerView?.addSubview(button)
         commentView?.delegate = self
-//        println("TableView FRame -> FooterView Frame -> FooterView.bounds")
-//        println(self.tableView.frame)
-//        println(self.tableView.bounds)
-//        println(footerView?.frame)
-//        println(footerView?.bounds)
-//        println("==================")
         return footerView
-    }
-    
-    override func viewDidLayoutSubviews() {
-        println("Did layout subviews")
-    }
-    
-    override func viewWillLayoutSubviews() {
-        println("will layout subviews")
-    }
-    
-    
-    func textViewDidBeginEditing(textView: UITextView) {
-        println("textViewDidBeginEditing \(self.tableView.contentOffset)")
-
     }
     
     func textViewDidChange(textView: UITextView) {
@@ -211,9 +188,5 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         println(comments?.count)
         self.commentView?.resignFirstResponder()
         self.tableView.reloadData()
-//        self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Automatic)
-        //self.tableView.reloadData()
-//        self.tableView.setNeedsDisplay()
-        
     }
 }
