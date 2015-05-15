@@ -21,7 +21,7 @@ class CommentsTableViewController: UITableViewController, UITextViewDelegate {
         println(yak?.objectForKey("comments"))
         
         if(yak?.objectForKey("comments") != nil) {
-            comments = yak?.objectForKey("comments") as [String]
+            comments = yak?.objectForKey("comments") as! [String]
         }
 
     }
@@ -145,7 +145,7 @@ class CommentsTableViewController: UITableViewController, UITextViewDelegate {
                 
                 for item in self.footerView!.subviews {
                     if(item.isKindOfClass(UIButton.self)){
-                        let button = item as UIButton
+                        let button = item as! UIButton
                         let newY = self.footerView!.bounds.height / 2 - button.bounds.height / 2
                         let buttonFrame = CGRect(x: button.frame.minX, y: newY , width: button.bounds.width, height : button.bounds.height)
                         button.frame = buttonFrame
@@ -175,7 +175,7 @@ class CommentsTableViewController: UITableViewController, UITextViewDelegate {
 
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("commentCell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("commentCell", forIndexPath: indexPath) as! UITableViewCell
 
         cell.textLabel?.text = comments![indexPath.row]
         return cell

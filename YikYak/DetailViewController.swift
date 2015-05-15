@@ -47,7 +47,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
 
 
         /* Setup Map */
-        let geo = yak?.objectForKey("location") as PFGeoPoint
+        let geo = yak?.objectForKey("location") as! PFGeoPoint
         let coordinate = CLLocationCoordinate2D(latitude: geo.latitude, longitude: geo.longitude)
         let reg = MKCoordinateRegionMakeWithDistance(coordinate, 1500, 1500)
         self.mapView.setRegion(reg, animated: true)
@@ -55,7 +55,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
 
         
         if(yak?.objectForKey("comments") != nil) {
-            comments = yak?.objectForKey("comments") as [String]
+            comments = yak?.objectForKey("comments") as! [String]
         }
         println(yak)
         println(yak?.objectForKey("text"))
@@ -65,12 +65,12 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
 
     func keyBoardWillShow(notification: NSNotification) {
         var info:NSDictionary = notification.userInfo!
-        var keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as NSValue).CGRectValue()
+        var keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as! NSValue).CGRectValue()
         
         var keyboardHeight:CGFloat =  keyboardSize.height - 40
         
 
-        var animationDuration:CGFloat = info[UIKeyboardAnimationDurationUserInfoKey] as CGFloat
+        var animationDuration:CGFloat = info[UIKeyboardAnimationDurationUserInfoKey] as! CGFloat
         
         var contentInsets: UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardHeight, 0.0);
         self.tableView.contentInset = contentInsets
@@ -102,7 +102,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("commentCell", forIndexPath: indexPath) as CommentTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("commentCell", forIndexPath: indexPath) as! CommentTableViewCell
         cell.commentText?.text = comments![indexPath.row]
         return cell
     }
@@ -161,7 +161,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
                 
                 for item in self.footerView!.subviews {
                     if(item.isKindOfClass(UIButton.self)){
-                        let button = item as UIButton
+                        let button = item as! UIButton
                         let newY = self.footerView!.bounds.height / 2 - button.bounds.height / 2
                         let buttonFrame = CGRect(x: button.frame.minX, y: newY , width: button.bounds.width, height : button.bounds.height)
                         button.frame = buttonFrame

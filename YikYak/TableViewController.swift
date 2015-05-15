@@ -83,7 +83,7 @@ class TableViewController: PFQueryTableViewController, CLLocationManagerDelegate
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         locationManager.stopUpdatingLocation()
         if(locations.count > 0){
-            let location = locations[0] as CLLocation
+            let location = locations[0] as! CLLocation
             println(location.coordinate)
             currLocation = location.coordinate
         } else {
@@ -95,7 +95,7 @@ class TableViewController: PFQueryTableViewController, CLLocationManagerDelegate
     override func objectAtIndexPath(indexPath: NSIndexPath!) -> PFObject! {
         var obj : PFObject? = nil
         if(indexPath.row < self.objects.count){
-            obj = self.objects[indexPath.row] as PFObject
+            obj = self.objects[indexPath.row] as! PFObject
         }
 
         return obj
@@ -103,13 +103,13 @@ class TableViewController: PFQueryTableViewController, CLLocationManagerDelegate
 
     
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!, object: PFObject!) -> PFTableViewCell! {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as TableViewCell
-        cell.yakText.text = object.valueForKey("text") as String
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! TableViewCell
+        cell.yakText.text = object.valueForKey("text") as! String
         cell.yakText.numberOfLines = 0
-        let score = object.valueForKey("count") as Int
+        let score = object.valueForKey("count") as! Int
         cell.count.text = "\(score)"
         cell.time.text = "\((indexPath.row + 1) * 3)m ago"
-        let replycnt = object.objectForKey("replies") as Int
+        let replycnt = object.objectForKey("replies") as! Int
         cell.replies.text = "\(replycnt) replies"
         return cell
     }
@@ -137,9 +137,9 @@ class TableViewController: PFQueryTableViewController, CLLocationManagerDelegate
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "yakDetail"){
             let indexPath = self.tableView.indexPathForSelectedRow()
-            let obj = self.objects[indexPath!.row] as PFObject
-            let navVC = segue.destinationViewController as UINavigationController
-            let detailVC = navVC.topViewController as DetailViewController
+            let obj = self.objects[indexPath!.row] as! PFObject
+            let navVC = segue.destinationViewController as! UINavigationController
+            let detailVC = navVC.topViewController as! DetailViewController
             detailVC.yak = obj
         }
     }

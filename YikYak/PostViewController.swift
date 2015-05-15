@@ -43,7 +43,7 @@ class PostViewController: UIViewController, UITextViewDelegate, CLLocationManage
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         locationManager.stopUpdatingLocation()
         if(locations.count > 0){
-            let location = locations[0] as CLLocation
+            let location = locations[0] as! CLLocation
             currLocation = location.coordinate
         } else {
             alert()
